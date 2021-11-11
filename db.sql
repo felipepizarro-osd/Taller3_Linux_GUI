@@ -19,7 +19,7 @@ CREATE TABLE entrenador (
     password varchar(50) , 
     nombre_usuario varchar(50),
     fecha_nac date,
-    edad int,
+    edad int
 );
 --insert elements in to entrenador table 
 INSERT INTO entrenador (nombre,password,nombre_usuario,fecha_nac,edad) VALUES ('felipe','root','user1','12-02-1998',23);
@@ -74,7 +74,7 @@ insert into especie (id,nombre,id_tipo,id_tipo2) values (2,'charmander',7,6);
 insert into especie (id,nombre,id_tipo,id_tipo2) values (3,'Bulbasaur',4,3);
 insert into especie (id,nombre,id_tipo) values (4,'Wartortle',6);
 insert into especie (id,nombre,id_tipo) values (5,'Venusaur',2);
-insert into especie (id,nombre,id_tipo,id_tipo2) values (6,'Raichu',5);
+insert into especie (id,nombre,id_tipo,id_tipo2) values (6,'Raichu',5,6);
 
 --create table selec_atack
 CREATE TABLE monstruos(
