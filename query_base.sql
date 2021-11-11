@@ -1,14 +1,5 @@
---mr arreglado : https://app.diagrams.net/#G13mmksXYQGwj2blyQzbI6Tl3__95Qi5JU
---Drop:
---equipo,mundo,select atack
---referencias de entrenador a monstruo por query (nos dimos cuenta que la tabla equipo solo relacionaba las 2 y enredaba la implementacion)
---lo mismo pasaba con select atack
---tabla mundo no tenia razon de existir
---modificacion de las cardinalidades en especies y tipos y de entrenador a monstruos con relacion a las querys buscar el ...
---monstruos correspondiente a un equipo de un usuario es solamente ver que monstruo tiene su id 
---cambio de foreign key de estadisticas entendimiento erroneo ya que estaba referenciada en entrenador pero mientras no 
---juegue no tiene estadisticas 
-
+select * from entrenador e ;
+drop table entrenador ;
 CREATE DATABASE taller3;
 --\c taller3 user postgres
 
@@ -19,7 +10,7 @@ CREATE TABLE entrenador (
     password varchar(50) , 
     nombre_usuario varchar(50),
     fecha_nac date,
-    edad int,
+    edad int
 );
 --insert elements in to entrenador table 
 INSERT INTO entrenador (nombre,password,nombre_usuario,fecha_nac,edad) VALUES ('felipe','root','user1','12-02-1998',23);
@@ -41,6 +32,7 @@ insert into ataque (tipo_at,daño_base) values ('acero',60);
 insert into ataque (tipo_at,daño_base) values ('electrico',25);
 insert into ataque (tipo_at,daño_base) values ('tierra',89);
 insert into ataque (tipo_at,daño_base) values ('fantasma',70);
+select * from ataque ;
 
 CREATE TABLE tipos(
     id int primary key not null,
@@ -58,7 +50,7 @@ insert into tipos (id,nombre,fortaleza,debilidad) values (6,'fantasma','acero','
 insert into tipos (id,nombre,fortaleza,debilidad) values (7,'fuego','tierra','agua');
 insert into tipos (id,nombre,fortaleza,debilidad) values (8,'agua','acero','fuego');
 
-
+select * from tipos ;
 --crear tabla de especies 
 CREATE TABLE especie(
     id int not null primary key,
@@ -74,8 +66,8 @@ insert into especie (id,nombre,id_tipo,id_tipo2) values (2,'charmander',7,6);
 insert into especie (id,nombre,id_tipo,id_tipo2) values (3,'Bulbasaur',4,3);
 insert into especie (id,nombre,id_tipo) values (4,'Wartortle',6);
 insert into especie (id,nombre,id_tipo) values (5,'Venusaur',2);
-insert into especie (id,nombre,id_tipo,id_tipo2) values (6,'Raichu',5);
-
+insert into especie (id,nombre,id_tipo,id_tipo2) values (6,'Raichu',5,6);
+select * from especie;
 --create table selec_atack
 CREATE TABLE monstruos(
     id int not null primary key,
@@ -100,4 +92,3 @@ CREATE TABLE estadisticas (
     foreign key (id_user) references entrenador(id)
 );
 --TO_DO:insert elements in the stadistics
-
