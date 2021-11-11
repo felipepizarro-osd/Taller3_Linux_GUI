@@ -1,4 +1,4 @@
-# Po
+# 
 # Game with postgresql and python
 # //first 
 # install pip in the proyect
