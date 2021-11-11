@@ -41,27 +41,7 @@ def pantalla_principal():
     principal = Toplevel()
     principal.geometry("500x500")
     principal.title("Game init")
-
-def registrar(name,password,username,fecha,edad):
-    reg = Toplevel()
-    reg.geometry("300x300")
-    reg.title("registro completo")
-    conn = psycopg2.connect(
-        dbname = "taller3",
-        user = "postgres",
-        password = "root",
-        host = "localhost",
-        port = "5432"
-    )
-    
-    cur = conn.cursor()
-    query ='''INSERT INTO entrenador (nombre, password ,nombre_usuario , fecha_nac , edad) VALUES (%s,%s,%s,%s,%s)'''
-
-    cur.execute(query,(name , password , username , fecha , edad))
-    row = cur.fetchall() 
-
-    conn.commit()
-    conn.close()    
+  
 
 def registrar_user():
     registrar = Toplevel()
