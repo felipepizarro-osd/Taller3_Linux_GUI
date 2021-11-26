@@ -92,3 +92,21 @@ CREATE TABLE estadisticas (
     foreign key (id_user) references entrenador(id)
 );
 --TO_DO:insert elements in the stadistics
+CREATE TABLE equipo (
+    id_entrenador int not null ,
+    foreign key (id_entrenador) references entrenador(id),
+    id_mounstruo1 int,
+    id_mounstruo2 int,
+    id_mounstruo3 int,
+    id_mounstruo4 int,
+    id_mounstruo5 int,
+    id_mounstruo6 int,
+
+    foreign key (id_mounstruo1) references monstruos(id),
+    foreign key (id_mounstruo2) references monstruos(id),
+    foreign key (id_mounstruo3) references monstruos(id),
+    foreign key (id_mounstruo4) references monstruos(id),
+    foreign key (id_mounstruo5) references monstruos(id),
+    foreign key (id_mounstruo6) references monstruos(id),
+
+);
